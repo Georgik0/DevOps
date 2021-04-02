@@ -6,12 +6,12 @@ __Запуск minikube__ \
 
 
 ## Metallb:
-__Подготовительные действия__ \
+__Подготовительные действия__ 
 - Установка \
 `minikube addons enable metallb` включаем metallb \
 `eval $(minikube docker-env)` запускать docker в окружении minikube
 
-__Установка metallb__ \
+__Еще команды для установки metallb (возможно лишнее)__ \
 `kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.6/manifests/namespace.yaml` \
 `kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.6/manifests/metallb.yaml`
 
