@@ -23,13 +23,9 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
  -subj "/C=RU/ST=Moscow/L=Moscow/O=42/OU=21/CN=nginx-selfsigned"
 
 COPY start.sh ./start.sh
-# RUN chmod +x /start.sh
-# CMD sh ./start.sh
 
 EXPOSE 80
 EXPOSE 443
 
-# WORKDIR /usr/src/app/
+
 CMD [ "sh", "start.sh" ]
-# COPY ./my_config /usr/src/app/
-# RUN mv /usr/src/app/ /etc/nginx/conf.d/
