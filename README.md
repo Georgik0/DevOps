@@ -30,3 +30,9 @@ __Удалить все__ \
 
 __Показать всю инфу пода__ \
 `kubectl describe pod name_pod`
+
+__Добавить в yaml-ы__
+```
+annotations:
+    metallb.universe.tf/allow-shared-ip: shared
+```
