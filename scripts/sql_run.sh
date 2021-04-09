@@ -1,0 +1,1 @@
+docker run --rm -it -p 3306:3306 --name sql image-mysql
