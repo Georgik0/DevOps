@@ -12,7 +12,7 @@ COPY default.conf /etc/nginx/conf.d/
 
 # wordpress
 # RUN apk add php7 php7-fpm php7-mysqli wget
-# RUN apk add php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-zlib php7-curl php7-mbstring php7-json php7-session
+RUN apk add php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-zlib php7-curl php7-mbstring php7-json php7-session
 # RUN wget http://wordpress.org/latest.tar.gz
 # RUN mv latest.tar.gz /home/www/
 # RUN tar -xzvf /home/www/latest.tar.gz
@@ -34,16 +34,16 @@ RUN tar -xvf latest.tar.gz && \
 # RUN mv my.cnf /etc/
 
 # get ssl
-# RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-#  -keyout /etc/ssl/private/nginx-selfsigned.key \
-#  -out /etc/ssl/certs/nginx-selfsigned.crt \
-#  -subj "/C=RU/ST=Moscow/L=Moscow/O=42/OU=21/CN=nginx-selfsigned"
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+ -keyout /etc/ssl/private/nginx-selfsigned.key \
+ -out /etc/ssl/certs/nginx-selfsigned.crt \
+ -subj "/C=RU/ST=Moscow/L=Moscow/O=42/OU=21/CN=nginx-selfsigned"
 
-# COPY start.sh ./
+COPY start.sh ./
 EXPOSE 5050
 
 # CMD ["/bin/sh", "-c", "/usr/sbin/php-fpm7; startsql.sh; exec nginx -g 'daemon off;';"]
 
 # WORKDIR /var/www/localhost/htdocs
-# CMD [ "/bin/sh", "start.sh" ]
+CMD [ "sh", "start.sh" ]
 # WORKDIR /home/www/
