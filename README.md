@@ -31,6 +31,9 @@ __Удалить все__ \
 __Показать всю инфу пода__ \
 `kubectl describe pod name_pod`
 
+__Войти в запущенный под__ \
+`docker exec -ti 55c103fa1296 /bin/sh`
+
 __Добавить в yaml-ы (но это не точно)__
 ```
 annotations:
