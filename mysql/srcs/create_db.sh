@@ -7,10 +7,18 @@ FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
 # mysql <<MYSQL_SCRIPT
+# CREATE DATABASE wordpress;
+# GRANT ALL PRIVILEGES ON wordpress.* TO 'admin'@'%' identified by 'admin' WITH GRANT OPTION;
+# FLUSH PRIVILEGES;
+# EXIT
+# MYSQL_SCRIPT
+
+# mysql <<MYSQL_SCRIPT
 # "CREATE USER 'user'@'%' IDENTIFIED BY 'password';"
 # "CREATE DATABASE wordpress;"
-# "GRANT ALL PRIVILEGES ON wordpress.* TO 'user'@'%';"
+# "GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress_user'@'%';"
 # "DROP DATABASE test;"
 # "FLUSH PRIVILEGES;"
 # MYSQL_SCRIPT
-mysql wordpress -u root --password=  < wordpress.sql
+
+mysql wordpress -u root --password= < wordpress.sql
