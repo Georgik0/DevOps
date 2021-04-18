@@ -1,3 +1,5 @@
+kubectl delete service service-phpmyadmin
+kubectl delete deploy phpmyadmin-deploy
 docker rmi image-phpmyadmin
 docker build -t image-phpmyadmin ./phpmyadmin
 # docker run --rm -it -p 5000:5000 --name wp image-phpmyadmin

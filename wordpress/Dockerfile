@@ -3,35 +3,37 @@ FROM alpine:3.7
 RUN apk update
 RUN apk add nginx openrc openssl
 RUN mkdir -p /run/nginx/
-RUN mkdir /home/www/
+RUN mkdir -p /home/www/wordpress
 
 # nginx
 RUN rm -rf /etc/nginx/conf.d/default.conf
 COPY default.conf /etc/nginx/conf.d/
+# RUN mkdir -p /etc/nginx/snippets
+# COPY ./fastcgi-php.conf /etc/nginx/snippets/fastcgi-php.conf
 # COPY index.php /home/www/
 
+WORKDIR /home/www/
 # wordpress
 # RUN apk add php7 php7-fpm php7-mysqli wget
 RUN apk add php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-zlib php7-curl php7-mbstring php7-json php7-session
-# RUN wget http://wordpress.org/latest.tar.gz
-# RUN mv latest.tar.gz /home/www/
-# RUN tar -xzvf /home/www/latest.tar.gz
-# RUN rm /home/www/latest.tar.gz
-# COPY wp-config.php /home/www/wp-config.php
+RUN apk add php7-fpm php7-mysqli php7-xml php7-simplexml php7-json php7-iconv php7-tokenizer php7-xmlwriter php7-session php7-mbstring
+RUN wget http://wordpress.org/latest.tar.gz
+# RUN mv latest.tar.gz /home/www/wordpress
+RUN tar -xzvf latest.tar.gz
+RUN rm latest.tar.gz
+COPY wp-config.php ./
 
-ADD https://wordpress.org/latest.tar.gz .
-COPY wp-config.php .
 # Install Wordpress
-RUN tar -xvf latest.tar.gz && \
-	mv wordpress /home/www/ && \
-	mv wp-config.php /home/www/ && \
-	rm -f latest.tar.gz
+# ADD https://wordpress.org/latest.tar.gz .
+# RUN tar -xvf latest.tar.gz && \
+# 	mv wordpress /home/www/ && \
+# 	rm -f latest.tar.gz
+# COPY wp-config.php /home/www/wordpress/wp-config.php
 
-# mysql
-# 1COPY ./srcs ./
-# RUN apk add mysql mysql-client
-# RUN mkdir -p /run/mysqld
-# RUN mv my.cnf /etc/
+# supervisor
+# RUN apk add supervisor
+RUN apk --update add supervisor
+COPY ./supervisord.conf /etc/supervisord.conf
 
 # get ssl
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
@@ -45,5 +47,6 @@ EXPOSE 5050
 # CMD ["/bin/sh", "-c", "/usr/sbin/php-fpm7; startsql.sh; exec nginx -g 'daemon off;';"]
 
 # WORKDIR /var/www/localhost/htdocs
-CMD [ "sh", "start.sh" ]
+# CMD [ "sh", "start.sh" ]
+ENTRYPOINT ["supervisord", "--nodaemon", "--configuration", "/etc/supervisord.conf"]
 # WORKDIR /home/www/

@@ -21,11 +21,16 @@ RUN wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-
 RUN tar -xvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
 RUN mv ./phpMyAdmin-4.9.0.1-all-languages /home/www/
 RUN mv /home/www/phpMyAdmin-4.9.0.1-all-languages /home/www/phpmyadmin
+# RUN wget http://files.directadmin.com/services/all/phpMyAdmin/phpMyAdmin-5.0.2-all-languages.tar.gz
+# RUN tar zxvf phpMyAdmin-5.0.2-all-languages.tar.gz
+# RUN mv ./phpMyAdmin-5.0.2-all-languages /home/www/
+# RUN mv /home/www/phpMyAdmin-5.0.2-all-languages /home/www/phpmyadmin
 COPY config.inc.php /home/www/phpmyadmin
 
-# # supervisor
+# supervisor
 # RUN apk add supervisor
-# COPY ./supervisord.conf /etc/supervisord.conf
+RUN apk --update add supervisor
+COPY ./supervisord.conf /etc/supervisord.conf
 
 
 # get ssl
@@ -38,4 +43,6 @@ COPY start.sh .
 
 EXPOSE 5000
 
-CMD [ "sh", "start.sh" ]
+# CMD [ "sh", "start.sh" ]
+# CMD ["/usr/bin/supervisord", "-d", "/etc/supervisord.conf"]
+ENTRYPOINT ["supervisord", "--nodaemon", "--configuration", "/etc/supervisord.conf"]
