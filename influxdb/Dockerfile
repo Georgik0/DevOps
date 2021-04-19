@@ -10,12 +10,19 @@ COPY influxdb.conf /etc/influxdb.conf
 # ADD https://dl.influxdata.com/influxdb/releases/influxdb-1.5.3-static_linux_amd64.tar.gz ./
 
 # telegraf
-ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.6.3-static_linux_amd64.tar.gz ./
+# ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.6.3-static_linux_amd64.tar.gz ./
 # RUN mkdir -p /etc/telegraf
 # COPY ./telegraf.conf /etc/telegraf/telegraf.conf
+
+# telegraf
+ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.6.3-static_linux_amd64.tar.gz ./
+RUN tar -C . -xzf telegraf-1.6.3-static_linux_amd64.tar.gz
+RUN cp telegraf/telegraf /usr/bin/
+RUN mkdir -p /etc/telegraf
+COPY ./telegraf.conf /etc/telegraf/telegraf.conf
 
 COPY start.sh ./
 
 EXPOSE 8086
 
-# CMD [ "sh", "start.sh" ]
+CMD [ "sh", "start.sh" ]

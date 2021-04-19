@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-grafana
+spec:
+  ports:
+  - port: 3000
+    targetPort: 3000
+    name: grafana
+    protocol: TCP
+  selector:
+    app: label-grafana
+  type: LoadBalancer
+  externalIPs:
+  - 192.168.99.107
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana-deploy
+  labels:
+    app: label-grafana
+spec:
+  selector:
+    matchLabels:
+      app: label-grafana
+  template:
+    metadata:
+      labels:
+        app: label-grafana
+    spec:
+      containers:
+        - image: image-grafana
+          name: cont-grafana
+          ports:
+            - containerPort: 3000
+              name: grafana
+          imagePullPolicy: Never
