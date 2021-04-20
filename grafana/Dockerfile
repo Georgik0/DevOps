@@ -19,4 +19,4 @@ COPY start.sh ./
 
 EXPOSE 3000
 
-# CMD [ "sh", "start.sh" ]
+CMD [ "sh", "start.sh" ]

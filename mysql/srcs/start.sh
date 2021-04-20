@@ -8,6 +8,7 @@ touch /run/openrc/softlevel
 rc-service mariadb start
 sh create_db.sh
 rc-service mariadb stop
+telegraf &
 mysqld_safe --datadir="/var/lib/mysql"
 
 

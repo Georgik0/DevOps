@@ -22,6 +22,13 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
  -out /etc/ssl/certs/nginx-selfsigned.crt \
  -subj "/C=RU/ST=Moscow/L=Moscow/O=42/OU=21/CN=nginx-selfsigned"
 
+# telegraf
+ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.6.3-static_linux_amd64.tar.gz ./
+RUN tar -C . -xzf telegraf-1.6.3-static_linux_amd64.tar.gz
+RUN cp telegraf/telegraf /usr/bin/
+RUN mkdir -p /etc/telegraf
+COPY ./telegraf.conf /etc/telegraf/telegraf.conf
+
 COPY start.sh ./start.sh
 
 EXPOSE 80
