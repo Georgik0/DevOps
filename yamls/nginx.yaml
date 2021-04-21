@@ -20,7 +20,7 @@ spec:
         app: label-nginx
     type: LoadBalancer
     externalIPs:
-    - 192.168.99.107
+    - 192.168.99.109
     # loadBalancerIP: 192.168.99.107
 
 ---

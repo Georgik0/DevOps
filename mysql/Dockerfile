@@ -12,7 +12,7 @@ ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.6.3-static_linux_amd6
 RUN tar -C . -xzf telegraf-1.6.3-static_linux_amd64.tar.gz
 RUN cp telegraf/telegraf /usr/bin/
 RUN mkdir -p /etc/telegraf
-COPY ./telegraf.conf /etc/telegraf/telegraf.conf
+RUN mv ./telegraf.conf /etc/telegraf/telegraf.conf
 
 EXPOSE 3306
 

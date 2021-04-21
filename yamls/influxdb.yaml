@@ -12,7 +12,7 @@ spec:
     app: label-influxdb
   type: LoadBalancer
   externalIPs:
-  - 192.168.99.107
+  - 192.168.99.109
 
 ---
 

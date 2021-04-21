@@ -21,4 +21,4 @@ MYSQL_SCRIPT
 # "FLUSH PRIVILEGES;"
 # MYSQL_SCRIPT
 
-mysql wordpress -u root --password= < wordpress.sql
+# mysql wordpress -u root --password= < wordpress.sql

@@ -14,7 +14,7 @@ spec:
     app: label-mysql
   type: LoadBalancer
   externalIPs:
-  - 192.168.99.107
+  - 192.168.99.109
 
 ---
 
