@@ -4,6 +4,8 @@
 __Запуск minikube__ \
 `minikube start`
 
+__Полезные команды__ \
+`minikube dashboard`
 
 ## Metallb:
 __Подготовительные действия__ 
