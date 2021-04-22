@@ -15,79 +15,59 @@
 	"editable": true,
 	"gnetId": null,
 	"graphTooltip": 0,
+	"id": 5,
 	"links": [],
 	"panels": [
 	  {
-		"datasource": "InfluxDB",
+		"aliasColors": {},
+		"bars": false,
+		"dashLength": 10,
+		"dashes": false,
+		"datasource": "Wordpress",
 		"fieldConfig": {
-		  "defaults": {
-			"color": {
-			  "mode": "palette-classic"
-			},
-			"custom": {
-			  "axisLabel": "",
-			  "axisPlacement": "auto",
-			  "barAlignment": 0,
-			  "drawStyle": "line",
-			  "fillOpacity": 10,
-			  "gradientMode": "none",
-			  "hideFrom": {
-				"graph": false,
-				"legend": false,
-				"tooltip": false
-			  },
-			  "lineInterpolation": "linear",
-			  "lineWidth": 1,
-			  "pointSize": 5,
-			  "scaleDistribution": {
-				"type": "linear"
-			  },
-			  "showPoints": "never",
-			  "spanNulls": true
-			},
-			"mappings": [],
-			"thresholds": {
-			  "mode": "absolute",
-			  "steps": [
-				{
-				  "color": "green",
-				  "value": null
-				},
-				{
-				  "color": "red",
-				  "value": 80
-				}
-			  ]
-			},
-			"unit": "short"
-		  },
+		  "defaults": {},
 		  "overrides": []
 		},
+		"fill": 1,
+		"fillGradient": 0,
 		"gridPos": {
-		  "h": 8,
+		  "h": 9,
 		  "w": 12,
 		  "x": 0,
 		  "y": 0
 		},
+		"hiddenSeries": false,
 		"id": 2,
-		"options": {
-		  "graph": {},
-		  "legend": {
-			"calcs": [],
-			"displayMode": "list",
-			"placement": "bottom"
-		  },
-		  "tooltipOptions": {
-			"mode": "single"
-		  }
+		"legend": {
+		  "avg": false,
+		  "current": false,
+		  "max": false,
+		  "min": false,
+		  "show": true,
+		  "total": false,
+		  "values": false
 		},
+		"lines": true,
+		"linewidth": 1,
+		"nullPointMode": "null",
+		"options": {
+		  "alertThreshold": true
+		},
+		"percentage": false,
 		"pluginVersion": "7.5.3",
+		"pointradius": 2,
+		"points": false,
+		"renderer": "flot",
+		"seriesOverrides": [],
+		"spaceLength": 10,
+		"stack": false,
+		"steppedLine": false,
 		"targets": [
 		  {
 			"groupBy": [
 			  {
 				"params": [
-				  "1s"
+				  "10s"
 				],
 				"type": "time"
 			  },
@@ -101,7 +81,6 @@
 			"measurement": "cpu",
 			"orderByTime": "ASC",
 			"policy": "default",
-			"queryType": "randomWalk",
 			"refId": "A",
 			"resultFormat": "time_series",
 			"select": [
@@ -122,16 +101,54 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "mysql-deploy-7bb58bc76b-5xk2z"
+				"value": "wp-deploy-7fc54b5c5c-zcqmh"
 			  }
 			]
 		  }
 		],
-		"title": "mysql",
-		"type": "timeseries"
+		"thresholds": [],
+		"timeFrom": null,
+		"timeRegions": [],
+		"timeShift": null,
+		"title": "Wordpress",
+		"tooltip": {
+		  "shared": true,
+		  "sort": 0,
+		  "value_type": "individual"
+		},
+		"type": "graph",
+		"xaxis": {
+		  "buckets": null,
+		  "mode": "time",
+		  "name": null,
+		  "show": true,
+		  "values": []
+		},
+		"yaxes": [
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  },
+		  {
+			"format": "short",
+			"label": null,
+			"logBase": 1,
+			"max": null,
+			"min": null,
+			"show": true
+		  }
+		],
+		"yaxis": {
+		  "align": false,
+		  "alignLevel": null
+		}
 	  },
 	  {
-		"datasource": "InfluxDB",
+		"datasource": "Wordpress",
 		"fieldConfig": {
 		  "defaults": {
 			"color": {
@@ -150,12 +167,13 @@
 				  "value": 80
 				}
 			  ]
-			}
+			},
+			"unit": "short"
 		  },
 		  "overrides": []
 		},
 		"gridPos": {
-		  "h": 8,
+		  "h": 9,
 		  "w": 12,
 		  "x": 12,
 		  "y": 0
@@ -179,7 +197,7 @@
 			"groupBy": [
 			  {
 				"params": [
-				  "1s"
+				  "10s"
 				],
 				"type": "time"
 			  },
@@ -193,7 +211,6 @@
 			"measurement": "cpu",
 			"orderByTime": "ASC",
 			"policy": "default",
-			"queryType": "randomWalk",
 			"refId": "A",
 			"resultFormat": "time_series",
 			"select": [
@@ -210,16 +227,10 @@
 				}
 			  ]
 			],
-			"tags": [
-			  {
-				"key": "host",
-				"operator": "=",
-				"value": "mysql-deploy-7bb58bc76b-5xk2z"
-			  }
-			]
+			"tags": []
 		  }
 		],
-		"title": "mysql",
+		"title": "Wordpress",
 		"type": "gauge"
 	  }
 	],
@@ -235,7 +246,7 @@
 	},
 	"timepicker": {},
 	"timezone": "",
-	"title": "mysql",
-	"uid": "dmZ3LeXMz",
+	"title": "Wordpress",
+	"uid": "xcC61juMk",
 	"version": 1
-  }
+}

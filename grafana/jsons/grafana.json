@@ -15,11 +15,10 @@
 	"editable": true,
 	"gnetId": null,
 	"graphTooltip": 0,
-	"id": 2,
 	"links": [],
 	"panels": [
 	  {
-		"datasource": "Grafana",
+		"datasource": "InfluxDB",
 		"fieldConfig": {
 		  "defaults": {
 			"color": {
@@ -88,7 +87,7 @@
 			"groupBy": [
 			  {
 				"params": [
-				  "10s"
+				  "1s"
 				],
 				"type": "time"
 			  },
@@ -102,6 +101,7 @@
 			"measurement": "cpu",
 			"orderByTime": "ASC",
 			"policy": "default",
+			"queryType": "randomWalk",
 			"refId": "A",
 			"resultFormat": "time_series",
 			"select": [
@@ -122,16 +122,16 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "grafana-deploy-69fdc6bb97-mdr42"
+				"value": "grafana-deploy-69fdc6bb97-z4bdr"
 			  }
 			]
 		  }
 		],
-		"title": "Grafana",
+		"title": "grafana",
 		"type": "timeseries"
 	  },
 	  {
-		"datasource": "Grafana",
+		"datasource": "InfluxDB",
 		"fieldConfig": {
 		  "defaults": {
 			"color": {
@@ -179,7 +179,7 @@
 			"groupBy": [
 			  {
 				"params": [
-				  "10s"
+				  "1s"
 				],
 				"type": "time"
 			  },
@@ -193,6 +193,7 @@
 			"measurement": "cpu",
 			"orderByTime": "ASC",
 			"policy": "default",
+			"queryType": "randomWalk",
 			"refId": "A",
 			"resultFormat": "time_series",
 			"select": [
@@ -213,12 +214,12 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "grafana-deploy-69fdc6bb97-mdr42"
+				"value": "grafana-deploy-69fdc6bb97-z4bdr"
 			  }
 			]
 		  }
 		],
-		"title": "Grafana",
+		"title": "grafana",
 		"type": "gauge"
 	  }
 	],
@@ -235,6 +236,6 @@
 	"timepicker": {},
 	"timezone": "",
 	"title": "Grafana",
-	"uid": "pycy2CuGk",
+	"uid": "7RefoeuMz",
 	"version": 1
-}
+  }

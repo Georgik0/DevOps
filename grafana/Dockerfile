@@ -11,6 +11,10 @@ COPY ./telegraf.conf /etc/telegraf/telegraf.conf
 
 # # grafana
 RUN apk add grafana --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community/
+COPY ./grafana.db /grafana/data/
+# COPY ./jsons/*.json /usr/share/grafana/conf/provisioning/dashboards/
+# COPY datasource.yaml /usr/share/grafana/conf/provisioning/datasources/
+# COPY dashboard.yaml /usr/share/grafana/conf/provisioning/dashboards/
 # RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ grafana
 # RUN mv datasource.yaml /usr/share/grafana/conf/provisioning/datasources/ && \
 # 	mv *.json dashboard.yaml /usr/share/grafana/conf/provisioning/dashboards/

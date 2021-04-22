@@ -1,9 +1,9 @@
 #------Make docker images------#
 # eval $(minikube docker-env)
-# sh ./scripts/make_images.sh
+sh ./scripts/make_images.sh
 
 #--------Start metallb---------#
-# minikube addons enable metallb
+minikube addons enable metallb
 kubectl apply -f ./yamls/my_metallb.yaml
 
 #--------Start nginx-----------#

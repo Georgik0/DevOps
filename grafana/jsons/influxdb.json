@@ -122,12 +122,12 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "mysql-deploy-7bb58bc76b-5xk2z"
+				"value": "influxdb-deploy-66889f77bd-bt42g"
 			  }
 			]
 		  }
 		],
-		"title": "mysql",
+		"title": "influxdb",
 		"type": "timeseries"
 	  },
 	  {
@@ -214,12 +214,12 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "mysql-deploy-7bb58bc76b-5xk2z"
+				"value": "influxdb-deploy-66889f77bd-bt42g"
 			  }
 			]
 		  }
 		],
-		"title": "mysql",
+		"title": "influxdb",
 		"type": "gauge"
 	  }
 	],
@@ -235,7 +235,7 @@
 	},
 	"timepicker": {},
 	"timezone": "",
-	"title": "mysql",
-	"uid": "dmZ3LeXMz",
+	"title": "influxdb",
+	"uid": "8n6EL6uMk",
 	"version": 1
   }

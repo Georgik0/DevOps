@@ -15,10 +15,11 @@
 	"editable": true,
 	"gnetId": null,
 	"graphTooltip": 0,
+	"id": 6,
 	"links": [],
 	"panels": [
 	  {
-		"datasource": "InfluxDB",
+		"datasource": "Phpmyadmin",
 		"fieldConfig": {
 		  "defaults": {
 			"color": {
@@ -64,7 +65,7 @@
 		  "overrides": []
 		},
 		"gridPos": {
-		  "h": 8,
+		  "h": 9,
 		  "w": 12,
 		  "x": 0,
 		  "y": 0
@@ -87,7 +88,7 @@
 			"groupBy": [
 			  {
 				"params": [
-				  "1s"
+				  "10s"
 				],
 				"type": "time"
 			  },
@@ -122,16 +123,16 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "mysql-deploy-7bb58bc76b-5xk2z"
+				"value": "phpmyadmin-deploy-7f566b4848-95hpj"
 			  }
 			]
 		  }
 		],
-		"title": "mysql",
+		"title": "Phpmyadmin",
 		"type": "timeseries"
 	  },
 	  {
-		"datasource": "InfluxDB",
+		"datasource": "Phpmyadmin",
 		"fieldConfig": {
 		  "defaults": {
 			"color": {
@@ -155,7 +156,7 @@
 		  "overrides": []
 		},
 		"gridPos": {
-		  "h": 8,
+		  "h": 9,
 		  "w": 12,
 		  "x": 12,
 		  "y": 0
@@ -179,7 +180,7 @@
 			"groupBy": [
 			  {
 				"params": [
-				  "1s"
+				  "10s"
 				],
 				"type": "time"
 			  },
@@ -214,12 +215,12 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "mysql-deploy-7bb58bc76b-5xk2z"
+				"value": "phpmyadmin-deploy-7f566b4848-95hpj"
 			  }
 			]
 		  }
 		],
-		"title": "mysql",
+		"title": "Phpmyadmin",
 		"type": "gauge"
 	  }
 	],
@@ -235,7 +236,7 @@
 	},
 	"timepicker": {},
 	"timezone": "",
-	"title": "mysql",
-	"uid": "dmZ3LeXMz",
+	"title": "Phpmyadmin",
+	"uid": "CN-3OeXGz",
 	"version": 1
-  }
+}

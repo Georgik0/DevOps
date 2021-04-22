@@ -12,6 +12,7 @@
 		}
 	  ]
 	},
+	"description": "",
 	"editable": true,
 	"gnetId": null,
 	"graphTooltip": 0,
@@ -64,7 +65,7 @@
 		  "overrides": []
 		},
 		"gridPos": {
-		  "h": 8,
+		  "h": 9,
 		  "w": 12,
 		  "x": 0,
 		  "y": 0
@@ -98,10 +99,10 @@
 				"type": "fill"
 			  }
 			],
+			"hide": false,
 			"measurement": "cpu",
 			"orderByTime": "ASC",
 			"policy": "default",
-			"queryType": "randomWalk",
 			"refId": "A",
 			"resultFormat": "time_series",
 			"select": [
@@ -122,12 +123,12 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "mysql-deploy-7bb58bc76b-5xk2z"
+				"value": "phpmyadmin-deploy-7f566b4848-hhvw8"
 			  }
 			]
 		  }
 		],
-		"title": "mysql",
+		"title": "phpmyadmin",
 		"type": "timeseries"
 	  },
 	  {
@@ -155,7 +156,7 @@
 		  "overrides": []
 		},
 		"gridPos": {
-		  "h": 8,
+		  "h": 9,
 		  "w": 12,
 		  "x": 12,
 		  "y": 0
@@ -214,12 +215,12 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "mysql-deploy-7bb58bc76b-5xk2z"
+				"value": "phpmyadmin-deploy-7f566b4848-hhvw8"
 			  }
 			]
 		  }
 		],
-		"title": "mysql",
+		"title": "phpmyadmin",
 		"type": "gauge"
 	  }
 	],
@@ -235,7 +236,7 @@
 	},
 	"timepicker": {},
 	"timezone": "",
-	"title": "mysql",
-	"uid": "dmZ3LeXMz",
+	"title": "phpmyadmin",
+	"uid": "t-7oAeuMz",
 	"version": 1
   }

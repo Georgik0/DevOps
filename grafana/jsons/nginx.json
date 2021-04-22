@@ -15,11 +15,10 @@
 	"editable": true,
 	"gnetId": null,
 	"graphTooltip": 0,
-	"id": 4,
 	"links": [],
 	"panels": [
 	  {
-		"datasource": "Nginx",
+		"datasource": "InfluxDB",
 		"fieldConfig": {
 		  "defaults": {
 			"color": {
@@ -65,7 +64,7 @@
 		  "overrides": []
 		},
 		"gridPos": {
-		  "h": 9,
+		  "h": 8,
 		  "w": 12,
 		  "x": 0,
 		  "y": 0
@@ -88,7 +87,7 @@
 			"groupBy": [
 			  {
 				"params": [
-				  "10s"
+				  "1s"
 				],
 				"type": "time"
 			  },
@@ -102,6 +101,7 @@
 			"measurement": "cpu",
 			"orderByTime": "ASC",
 			"policy": "default",
+			"queryType": "randomWalk",
 			"refId": "A",
 			"resultFormat": "time_series",
 			"select": [
@@ -122,16 +122,16 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "nginx-deploy-5c9659dc56-zq6rc"
+				"value": "nginx-deploy-5c9659dc56-vsv8v"
 			  }
 			]
 		  }
 		],
-		"title": "Nginx",
+		"title": "nginx",
 		"type": "timeseries"
 	  },
 	  {
-		"datasource": "Nginx",
+		"datasource": "InfluxDB",
 		"fieldConfig": {
 		  "defaults": {
 			"color": {
@@ -150,13 +150,12 @@
 				  "value": 80
 				}
 			  ]
-			},
-			"unit": "short"
+			}
 		  },
 		  "overrides": []
 		},
 		"gridPos": {
-		  "h": 9,
+		  "h": 8,
 		  "w": 12,
 		  "x": 12,
 		  "y": 0
@@ -180,7 +179,7 @@
 			"groupBy": [
 			  {
 				"params": [
-				  "10s"
+				  "1s"
 				],
 				"type": "time"
 			  },
@@ -194,6 +193,7 @@
 			"measurement": "cpu",
 			"orderByTime": "ASC",
 			"policy": "default",
+			"queryType": "randomWalk",
 			"refId": "A",
 			"resultFormat": "time_series",
 			"select": [
@@ -214,12 +214,12 @@
 			  {
 				"key": "host",
 				"operator": "=",
-				"value": "nginx-deploy-5c9659dc56-zq6rc"
+				"value": "nginx-deploy-5c9659dc56-vsv8v"
 			  }
 			]
 		  }
 		],
-		"title": "Nginx",
+		"title": "nginx",
 		"type": "gauge"
 	  }
 	],
@@ -235,7 +235,7 @@
 	},
 	"timepicker": {},
 	"timezone": "",
-	"title": "Nginx",
-	"uid": "2KUrhCuMz",
+	"title": "nginx",
+	"uid": "TmZ3YeXGz",
 	"version": 1
-}
+  }
