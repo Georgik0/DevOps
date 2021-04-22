@@ -36,6 +36,9 @@ __Показать всю инфу пода__ \
 __Войти в запущенный под__ \
 `docker exec -ti 55c103fa1296 /bin/sh`
 
+__Скачать grafana.db__ \
+`Kubectl cp <grafana-pod>:"/grafana/data/grafana.db>" <your local place>`
+
 __Добавить в yaml-ы (но это не точно)__
 ```
 annotations:
