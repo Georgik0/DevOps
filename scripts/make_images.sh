@@ -4,6 +4,8 @@ docker rmi image-phpmyadmin
 docker rmi image-wordpress
 docker rmi image-influxdb
 docker rmi image-grafana
+docker rmi image-telegraf
+docker build -t image-telegraf ./telegraf
 docker build -t image-nginx ./nginx
 docker build -t image-phpmyadmin ./phpmyadmin
 docker build -t image-mysql ./mysql

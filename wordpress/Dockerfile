@@ -36,11 +36,11 @@ RUN apk --update add supervisor
 COPY ./supervisord.conf /etc/supervisord.conf
 
 # telegraf
-ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.6.3-static_linux_amd64.tar.gz ./
-RUN tar -C . -xzf telegraf-1.6.3-static_linux_amd64.tar.gz
-RUN cp telegraf/telegraf /usr/bin/
-RUN mkdir -p /etc/telegraf
-COPY ./telegraf.conf /etc/telegraf/telegraf.conf
+# ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.6.3-static_linux_amd64.tar.gz ./
+# RUN tar -C . -xzf telegraf-1.6.3-static_linux_amd64.tar.gz
+# RUN cp telegraf/telegraf /usr/bin/
+# RUN mkdir -p /etc/telegraf
+# COPY ./telegraf.conf /etc/telegraf/telegraf.conf
 
 # get ssl
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \

@@ -12,7 +12,7 @@ spec:
     app: label-grafana
   type: LoadBalancer
   externalIPs:
-  - 192.168.99.109
+  - 192.168.99.111
 
 ---
 
