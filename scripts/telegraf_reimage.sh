@@ -1,6 +1,6 @@
-# kubectl delete service service-telegraf
-kubectl delete deploy telegraf
-docker rmi telegraf_service
+kubectl delete service service-telegraf
+kubectl delete deploy telegraf-deploy
+docker rmi image-telegraf
 docker build -t telegraf_service ./telegraf
 # docker rmi image-telegraf
 # docker build -t image-telegraf ./telegraf

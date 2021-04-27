@@ -1,0 +1,14 @@
+data:
+  influxdb.conf: |
+    bind-adress="127.0.0.1:8088"
+    [meta]
+      dir="/var/lib/influxdb/meta"
+    [data]
+      dir="/var/lib/influxdb/data"
+      wal-dir = "/var/lib/influxdb/wal"
+      trace-logging-enable=true
+    [http]
+      bind-addres=":8088"
+      log-enabled=true
+    [[graphite]]
+      database="telegraf"

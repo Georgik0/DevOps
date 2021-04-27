@@ -2,7 +2,7 @@
 FROM alpine:3.12
 
 RUN apk update
-RUN apk add influxdb wget
+RUN apk add influxdb openrc wget
 
 # COPY influxdb.conf /etc/influxdb.conf
 # RUN apk update && apk upgrade && apk add --no-cache openrc && apk add vim && apk add supervisor
@@ -38,4 +38,5 @@ COPY start.sh ./
 EXPOSE 8086
 
 # CMD /usr/sbin/influxd
-CMD [ "sh", "start.sh" ]
+CMD ["influxd"]
+# CMD [ "sh", "start.sh" ]

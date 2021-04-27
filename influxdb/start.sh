@@ -9,6 +9,10 @@
 /usr/sbin/influxd
 
 # Initialize database
+influx -execute "CREATE DATABASE telegraf"
+influx -execute "CREATE USER dchani WITH PASSWORD 'dchani'"
+influx -execute "GRANT ALL ON influx TO dchani"
+
 # influx -execute "CREATE DATABASE grafana"
 # influx -execute "CREATE USER admin WITH PASSWORD 'admin'"
 # influx -execute "GRANT ALL ON influx TO admin"
