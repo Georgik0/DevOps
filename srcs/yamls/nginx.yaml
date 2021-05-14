@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: service-nginx
+spec:
+    ports:
+    - port: 80
+      targetPort: 80
+      name: http
+      protocol: TCP
+    - port: 443
+      targetPort: 443
+      name: https
+      protocol: TCP
+    selector:
+        app: label-nginx
+    type: LoadBalancer
+    externalIPs:
+    - 192.168.99.111
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: nginx-deploy
+    labels:
+        app: label-nginx
+spec:
+    selector:
+        matchLabels:
+            app: label-nginx
+    template:
+        metadata:
+            labels:
+                app: label-nginx
+        spec:
+            containers:
+                - image: image-nginx
+                  name: cont-nginx
+                  ports:
+                      - containerPort: 80
+                        name: http
+                      - containerPort: 443
+                        name: https
+                  imagePullPolicy: Never
