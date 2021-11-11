@@ -3,5 +3,5 @@
 Для запуска нужен minicube и docker \
 В yaml-файлах необходимо прописать ip адрес своего minicube
 ```sh
-sh start.sh
+sh setup.sh
 ```
